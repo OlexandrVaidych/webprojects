@@ -31,29 +31,29 @@ input[type='range']::-moz-range-thumb{
 }
 
 input[type='range']::-webkit-slider-runnable-track{
-    height: 10px;
+    height: 8px;
     border: 0.2px solid #000000;
     width: 100%;
     cursor: pointer;
     box-shadow: 1px 1px 1px #000000, 0 0 1px #030303;
     border-radius: 1.3px;
-    background-color: #3888e3;
+    background-color: #2d6fba;
 }
 
 input[type='range']:focus::-webkit-slider-runnable-track{
-    background-color: #3f98ff;
+    background-color: #3079cd;
 }
 
 input[type='range']::-moz-range-track{
-    height: 10px;
+    height: 8px;
     border: 0.2px solid #000000;
     width: 100%;
     cursor: pointer;
     box-shadow: 1px 1px 1px #000000, 0 0 1px #030303;
     border-radius: 1.3px;
-    background-color: #3888e3;
+    background-color: #2d6fba;
 }
 
 input[type='range']:focus::-moz-range-track{
-    background-color: #3f98ff;
+    background-color: #3079cd;
 }
