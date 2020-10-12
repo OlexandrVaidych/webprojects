@@ -4,7 +4,7 @@ const stop = document.getElementById('stop');
 const progress = document.getElementById('progress');
 const timestamp = document.getElementById('timestamp');
 
-/*Run & stop video*/
+//Run & pause video
 function toggleVideoStatus(){
     if(video.paused){
         video.play();
@@ -14,6 +14,7 @@ function toggleVideoStatus(){
     }
 }
 
+//update play/pause icon
 function updatePlayIcon() {
     if (video.paused) {
         play.innerHTML = '<i class="fa fa-play fa-2x"></i>';
@@ -23,7 +24,8 @@ function updatePlayIcon() {
     }
 }
 
-function updateTimeVideo(){
+//update progress & timestamp
+function updateProgress(){
     progress.value = (video.currentTime / video.duration) * 100;
 
     let mins = Math.floor(video.currentTime / 60);
@@ -41,20 +43,20 @@ function updateTimeVideo(){
     timestamp.innerHTML = `${mins}:${secs}`;
 }
 
-/*Run the video from the specified point on the slider*/
-function setProgress(){
-    video.currentTime = (progress.value * video.duration) / 100;
+//Set video time to progress
+function setVideoProgress(){
+    video.currentTime = (+progress.value * video.duration) / 100;
 }
 
 function stopVideo(){
     video.currentTime = 0;
-    video.paused();
+    video.pause();
 }
 
 video.addEventListener('click', toggleVideoStatus);
 video.addEventListener('play', updatePlayIcon);
 video.addEventListener('pause', updatePlayIcon);
-video.addEventListener('timeupdate', updateTimeVideo);
+video.addEventListener('timeupdate', updateProgress);
 play.addEventListener('click', toggleVideoStatus)
 stop.addEventListener('click', stopVideo);
-progress.addEventListener('change', setProgress)
+progress.addEventListener('change', setVideoProgress)
